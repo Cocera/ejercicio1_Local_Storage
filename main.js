@@ -20,22 +20,24 @@ const btn_delete = document.getElementById("btn_delete")
 
 // EXTRA
 
-const arrayUsers = []
+const arrayUsers = [];
 
 function saveUsers(e) {
     e.preventDefault();
-    userInfoP.innerHTML = "";
+
     const userRandom = {name: infoName.value, mail: infoMail.value, message: infoMessage.value};
     arrayUsers.push(userRandom);
+    
     document.getElementById("myForm").reset();
-    localStorage.setItem("arrayUsers", JSON.stringify(arrayUsers));
 
+    localStorage.setItem("arrayUsers", JSON.stringify(arrayUsers));
     let dataUsers = JSON.parse(localStorage.getItem("arrayUsers"));
+
+    userInfoP.innerHTML = "";
 
     for (let i=0; i<dataUsers.length; i++) {
         userInfoP.innerHTML += `${i+1}. El usuario es ${dataUsers[i].name}, con mail ${dataUsers[i].mail} y su comentario: ${dataUsers[i].message}<br>`;
     };
-
 };
 
 btn.addEventListener("click", saveUsers);
