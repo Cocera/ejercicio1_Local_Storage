@@ -33,7 +33,7 @@ function saveUsers(e) {
     let dataUsers = JSON.parse(localStorage.getItem("arrayUsers"));
 
     for (let i=0; i<dataUsers.length; i++) {
-        userInfoP.innerHTML += `${i+1}. El usuario es ${dataUsers[i].name}, tu mail ${dataUsers[i].mail} y tu comentario: ${dataUsers[i].message}<br>`;
+        userInfoP.innerHTML += `${i+1}. El usuario es ${dataUsers[i].name}, con mail ${dataUsers[i].mail} y su comentario: ${dataUsers[i].message}<br>`;
     };
 
 };
