@@ -6,7 +6,7 @@ const userInfoP = document.getElementById("userInfoP");
 const btn_delete = document.getElementById("btn_delete")
 
 
-// PRIMERA FASE
+// EJERCICIO BÁSICO
 // function saveInfo(e) {
 //     e.preventDefault();
 //     const user1 = {name: infoName.value, mail: infoMail.value, message: infoMessage.value};  
@@ -33,8 +33,8 @@ function saveUsers(e) {
     let dataUsers = JSON.parse(localStorage.getItem("arrayUsers"));
 
     for (let i=0; i<dataUsers.length; i++) {
-        userInfoP.innerHTML += `<p>Tu nombre es ${dataUsers[i].name}, tu mail ${dataUsers[i].mail} y tu comentario: ${dataUsers[i].message}</p>`
-    }
+        userInfoP.innerHTML += `${i+1}. El usuario es ${dataUsers[i].name}, tu mail ${dataUsers[i].mail} y tu comentario: ${dataUsers[i].message}<br>`;
+    };
 
 };
 
